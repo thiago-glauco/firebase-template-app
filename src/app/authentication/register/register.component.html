@@ -28,14 +28,17 @@
     <div class="password" fxFlex fxLayout="column" [fxHide]="loggedUser">
       <mat-form-field fxFlex>
         <input matInput 
-        [type]="hidePassword ? 'password' : 'text'" placeholder="Password" name="password"
+        [type]="hidePassword ? 'password' : 'text'" required placeholder="Password" name="password"
         [(ngModel)]="loginUser.password" #password="ngModel"  minlength="6" maxlength="8" >
       </mat-form-field>
       <mat-form-field fxFlex>
         <input matInput 
-        [type]="hidePassword ? 'password' : 'text'" placeholder="Confirm Password" name="confirmPassword"
+        [type]="hidePassword ? 'password' : 'text'" required placeholder="Confirm Password" name="confirmPassword"
         [(ngModel)]="loginUser.confirmPassword" minlength="6" maxlength="8" #confirmPassword="ngModel">
       </mat-form-field>
+      <div>
+        <p class="errorText" [fxHide]='passwordsEqual'>Senha e confirmação de senha estão diferentes</p>
+      </div>
       <button fxFlex flxAlign="center" mat-raised-button  (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>Exibir Senha
       </button>

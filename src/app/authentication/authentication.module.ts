@@ -30,7 +30,6 @@ import { LoginComponent } from './login/login.component';
     MatDialogModule,
     MatMenuModule,
     FlexLayoutModule,
-    
   ],
   declarations: [RegisterComponent, LoginComponent],
 })

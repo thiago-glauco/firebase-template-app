@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   hidePassword: boolean = true; //just for the user interface
   loggedUser: boolean = false; //toogle loggout and register buttons
   verifiedUser: boolean; //toogle loggout and register buttons
+  passwordsEqual: boolean = true;
 
   loginUser: RegisteredUser = new RegisteredUser(); //object with user form data
   registeredUser: firebase.User; //User with data returned from firebase auth service
@@ -36,6 +37,12 @@ export class RegisterComponent implements OnInit {
   }
 
   createUser() { 
+    if(this.loginUser.password !== this.loginUser.confirmPassword) {
+      this.passwordsEqual = false;
+      return;
+    } else {
+      this.passwordsEqual = true;
+    }
     let that = this; //para usar dentro do observável
 
     //solicita a criação do usuário
