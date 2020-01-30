@@ -9,6 +9,7 @@ import {environment} from './environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +36,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
     AuthenticationModule,
