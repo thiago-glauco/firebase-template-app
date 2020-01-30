@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   login( ){
-    let that = this;
+    console.log(this.loginUser.email)
     this.authService.emailSignIn(this.loginUser.email, this.loginUser.password).subscribe(this.loginObject)
   }
 
