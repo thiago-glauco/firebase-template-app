@@ -16,7 +16,7 @@
     </button>
   </div>
   <mat-divider></mat-divider>
-  <button fxFlex flxAlign="center" mat-raised-button [disabled]="!loginForm.valid" [fxHide]="loggedUser"  (click)="login()" [attr.aria-label]="'Entrar'"><mat-icon></mat-icon> Login </button>
+  <button fxFlex flxAlign="center" mat-raised-button [disabled]="!loginForm.valid" [fxHide]="loggedUser"  (click)="loginU()" [attr.aria-label]="'Entrar'"><mat-icon></mat-icon> Login </button>
   <button fxFlex flxAlign="center" [fxHide]="loggedUser" mat-raised-button (click)="googleLogin()" [attr.aria-label]="'Google Login'">
     <mat-icon>account_box</mat-icon> Registre-se via Google
   </button>
