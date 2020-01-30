@@ -1,0 +1,56 @@
+O usuário registrado tem a finalidade de ser uma abstração dos usuários registrados da aplicação.
+Serão três tipos:
+mãe
+terapeutas
+admins
+
+registeredUser implements User {
+  //informação de autenticação:
+  e-mail: string;
+  verified: boolean; //usuário clicou no link de confirmação de e-mail
+  uid: string; //uid fornecido pelo googleauth
+  creationTime: string // data de registro do usuário no firebaseauth
+  lastLogin: string //data do ultimo login no firebase auth
+  nome: string;
+  tel: string;
+  endereço: {
+    logradouro: string (rua, avenida, praça)
+    nome: string;
+    numero: string;
+    complemento?: string;
+  }
+  filhos: filho[
+    {
+      nome: string;
+      dataNascimento: string;
+      diagnostico: string
+    }
+  ]
+}
+
+terapeuta {
+    //informação de autenticação:
+  e-mail: string;
+  verified: boolean; //usuário clicou no link de confirmação de e-mail
+  uid: string; //uid fornecido pelo googleauth
+  creationTime: string // data de registro do usuário no firebaseauth
+  lastLogin: string //data do ultimo login no firebase auth
+  nome: string;
+  tel: string;
+  endereço: {
+    logradouro: string (rua, avenida, praça)
+    nome: string;
+    numero: string;
+    complemento?: string;
+  }
+  area: [
+
+  ]
+  agenda: [
+    datas: {
+      dia: string;
+      hora: string;
+      disponivel: boolean
+    }
+  ]
+}

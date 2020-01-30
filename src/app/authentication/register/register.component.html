@@ -47,13 +47,10 @@
     <button fxFlex flxAlign="center" mat-raised-button [disabled]="!registerForm.valid" [fxHide]="loggedUser"  (click)="createUser()" [attr.aria-label]="'Registrar'">
       <mat-icon></mat-icon> Registrar
     </button>
-       <button fxFlex flxAlign="center" mat-raised-button (click)="exit()" [attr.aria-label]="'Sair'">
-      <mat-icon></mat-icon> Sair
-    </button>
     <button fxFlex flxAlign="center" [fxHide]="loggedUser" mat-raised-button (click)="createGoogleUser()" [attr.aria-label]="'Registre-se via Google'">
       <mat-icon>account_box</mat-icon> Registre-se via Google
     </button>
     <button fxFlex flxAlign="center" [fxHide]="!loggedUser"  mat-raised-button (click)="logout()" [attr.aria-label]="'Logout'">
-      <mat-icon>account_box</mat-icon> Logout
+      <mat-icon>account_box</mat-icon> Sair
     </button>
   </form>

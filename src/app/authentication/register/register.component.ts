@@ -94,7 +94,7 @@ export class RegisterComponent implements OnInit {
         console.log(err);
         that.loggedUser = false;
         }
-    })
+    });
   }
 
   logout( ) {

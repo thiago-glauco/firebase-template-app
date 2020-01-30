@@ -25,11 +25,41 @@ export class LoginComponent implements OnInit {
   }
 
   login( ){
-
-  }
-
-  googleLogin( ) {
     
   }
 
+  googleLogin( ) {
+    let that = this;
+    //uses googl provider - easy with firebase
+    const userCredential = this.authService.googleLogin( );
+    userCredential.subscribe({
+      next(userData){
+        console.log(userData)
+        that.registeredUser = that.authService.getCurrentUser();
+        that.loggedUser = true;
+        that.verifiedUser = that.registeredUser.emailVerified;
+        },
+      error(err) {
+        console.log(err);
+        that.loggedUser = false;
+        }
+    });
+  }
+
+  logout( ) {
+    let that = this;
+    const logoutStatus = from(this.authService.logOut());
+    logoutStatus.subscribe({
+      next( data ) {
+        console.log(data);
+        that.loggedUser = false;
+      },
+      error(err) {
+        console.log(err);
+        if( that.authService.hasLoggedUser ) {
+          that.loggedUser = true;
+        }
+      }
+    });
+  }
 }
