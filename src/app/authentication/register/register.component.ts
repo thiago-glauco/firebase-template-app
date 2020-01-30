@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
     let that = this; //para usar dentro do observável
 
     //solicita a criação do usuário
-    const userObservable: Observable<User> = from(this.authService.signup(this.loginUser.email, this.loginUser.password));
+    const userObservable: Observable<User> = this.authService.signup(this.loginUser.email, this.loginUser.password);
 
     userObservable.subscribe({
       next( user ) {
@@ -82,7 +82,7 @@ export class RegisterComponent implements OnInit {
   createGoogleUser( ) {
     let that = this;
     //uses googl provider - easy with firebase
-    const userCredential = from(this.authService.googleLogin( ));
+    const userCredential = this.authService.googleLogin( );
     userCredential.subscribe({
       next(userData){
         console.log(userData)

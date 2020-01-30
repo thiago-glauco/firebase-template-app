@@ -21,6 +21,15 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
+
+  }
+
+  login( ){
+
+  }
+
+  googleLogin( ) {
+    
   }
 
 }

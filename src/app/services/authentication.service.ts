@@ -15,7 +15,7 @@ export class AuthenticationService {
     
   }
 
-  public signup(email: string, password: string): Promise<User|null> {
+  public signup(email: string, password: string): Observable<User|null> {
     console.log(email, password);
     return from(this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password) );
   }
@@ -48,8 +48,12 @@ export class AuthenticationService {
 
   }
 
-  public googleLogin( ): Promise<auth.UserCredential|null> {
-    return this.angularFireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  public googleLogin( ): Observable<auth.UserCredential|null> {
+    return from(this.angularFireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()));
+  }
+
+  public emailSignIn( email: string, password: string): Observable<auth.UserCredential|null> {
+    return from(this.angularFireAuth.auth.signInWithEmailAndPassword(email, password));
   }
 
 }

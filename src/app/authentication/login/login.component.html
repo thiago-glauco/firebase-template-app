@@ -14,6 +14,13 @@
     <button fxFlex flxAlign="center" mat-raised-button  (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
     <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>Exibir Senha
     </button>
-</div>
+  </div>
+  <mat-divider></mat-divider>
+  <button fxFlex flxAlign="center" mat-raised-button [disabled]="!registerForm.valid" [fxHide]="loggedUser"  (click)="login()" [attr.aria-label]="'Entrar'">
+    <mat-icon>user</mat-icon> Login
+  </button>
+  <button fxFlex flxAlign="center" [fxHide]="loggedUser" mat-raised-button (click)="googleLogin()" [attr.aria-label]="'Google Login'">
+    <mat-icon>account_box</mat-icon> Registre-se via Google
+  </button>
 
 </form>
