@@ -23,21 +23,16 @@ export class RegisterComponent implements OnInit {
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
-    console.log("Auth service is ");
-    console.log(this.authService.hasLoggedUser);
-    //verifica se existe um usuário logado ativo
-    /*if( this.authService. ) {
-      this.registeredUser = this.authService.getCurrentUser();
-      console.log(this.registeredUser);
-      this.loggedUser = true;
-      console.log(this.registeredUser);
-      this.verifiedUser = this.registeredUser.emailVerified;
-      console.log(this.verifiedUser);
-      //this.authService.logOut();
-    } else {
-      this.loggedUser = false;
-      this.verifiedUser = false;8?
-    }
+    if( this.authService.hasLoggedUser() ) {
+        this.registeredUser = this.authService.getCurrentUser();
+        this.loggedUser = true;
+        this.verifiedUser = this.registeredUser.emailVerified;
+        console.log(this.verifiedUser);
+        //this.authService.logOut();
+      } else {
+        this.loggedUser = false;
+        this.verifiedUser = false;
+      }
   }
 
   createUser() { 
