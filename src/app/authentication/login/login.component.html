@@ -1,3 +1,19 @@
-<p>
-login works!
-</p>
+<form class="form-space" fxLayout="column" #registerForm="ngForm" >
+    <mat-form-field fxFlex>
+    <input matInput type="email" placeholder="E-Mail" name="email" [(ngModel)]="loginUser.email" required #email="ngModel">
+    <mat-error *ngIf="email.touched && email.invalid">
+        A valid email is required.
+    </mat-error>
+  </mat-form-field>
+  <div class="password" fxFlex fxLayout="column" [fxHide]="loggedUser">
+    <mat-form-field fxFlex>
+      <input matInput 
+      [type]="hidePassword ? 'password' : 'text'" required placeholder="Password" name="password"
+      [(ngModel)]="loginUser.password" #password="ngModel"  minlength="6" maxlength="8" >
+    </mat-form-field>
+    <button fxFlex flxAlign="center" mat-raised-button  (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>Exibir Senha
+    </button>
+</div>
+
+</form>
