@@ -18,6 +18,19 @@ export class LoginComponent implements OnInit {
   loginUser: RegisteredUser = new RegisteredUser(); //object with user form data
   registeredUser: firebase.User; //User with data returned from firebase auth service
 
+  loginObject = {
+    next(userData){
+        console.log(userData)
+        this.registeredUser = this.authService.getCurrentUser();
+        this.loggedUser = true;
+        this.verifiedUser = this.registeredUser.emailVerified;
+    },
+    error(err) {
+      console.log(err);
+      this.loggedUser = false;
+    }
+  }
+
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
@@ -25,25 +38,15 @@ export class LoginComponent implements OnInit {
   }
 
   login( ){
-    
+    let that = this;
+    this.authService.emailSignIn(this.loginUser.email, this.loginUser.password).subscribe(this.loginObject)
   }
 
   googleLogin( ) {
     let that = this;
     //uses googl provider - easy with firebase
     const userCredential = this.authService.googleLogin( );
-    userCredential.subscribe({
-      next(userData){
-        console.log(userData)
-        that.registeredUser = that.authService.getCurrentUser();
-        that.loggedUser = true;
-        that.verifiedUser = that.registeredUser.emailVerified;
-        },
-      error(err) {
-        console.log(err);
-        that.loggedUser = false;
-        }
-    });
+    userCredential.subscribe(this.loginObject);
   }
 
   logout( ) {
