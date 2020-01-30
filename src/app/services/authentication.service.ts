@@ -53,6 +53,7 @@ export class AuthenticationService {
   }
 
   public emailSignIn( email: string, password: string): Observable<auth.UserCredential|null> {
+    console.log(email, password);
     return from(this.angularFireAuth.auth.signInWithEmailAndPassword(email, password));
   }
 
