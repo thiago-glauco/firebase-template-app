@@ -12,10 +12,10 @@ export class AuthenticationService {
   msgErrors = AUTH_ERRORS;
   
   constructor(private angularFireAuth: AngularFireAuth) {
-    
+  
   }
 
-  public signup(email: string, password: string): Observable<User|null> {
+  public signup(email: string, password: string): Observable<auth.UserCredential|null> {
     console.log(email, password);
     return from(this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password) );
   }

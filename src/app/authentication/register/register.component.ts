@@ -3,6 +3,7 @@ import {AuthenticationService} from '../../services/authentication.service';
 import {User} from '../../shared/user';
 import {LoginFormUser} from '../../shared/login-form-user';
 import {DatabaseUser} from '../../shared/database-user';
+import {UserService} from '../../services/user.service';
 import {Observable, from} from 'rxjs';
 
 @Component({
@@ -22,7 +23,8 @@ export class RegisterComponent implements OnInit {
   loginUser: LoginFormUser = new LoginFormUser(); //object with user form data
   registeredUser: firebase.User; //User with data returned from firebase auth service
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService,
+    private userService: UserService) { }
 
   ngOnInit() {
     if( this.authService.hasLoggedUser() ) {
@@ -56,7 +58,6 @@ export class RegisterComponent implements OnInit {
         that.registeredUser = user.user;
         that.loggedUser = true;
         that.verifiedUser = user.emailVerified;
-
         //envia e-mail de confirmação para o usuário
         from(that.authService.sendVerificationMail()).subscribe({
           next( data ) {
@@ -128,6 +129,9 @@ export class RegisterComponent implements OnInit {
       verified: this.registeredUser.emailVerified
     };
     console.log(userData);
+      this.userService.createUser(userData);
+   
   }
+
 
 }
