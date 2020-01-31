@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
       next( user ) {
         console.log(user);
         //os dados do usuário são armazenados em registeredUser
-        that.registeredUser = user;
+        that.registeredUser = user.user;
         that.loggedUser = true;
         that.verifiedUser = user.emailVerified;
 
@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
         from(that.authService.sendVerificationMail()).subscribe({
           next( data ) {
             console.log(data);
-            that.saveUserData()
+            that.saveUserData();
             alert("Um e-mail de confirmação foi enviado para a conta de cadastro. Confirme o e-mail para acessar o aplicativo");
             //that.logout();
           },
@@ -89,7 +89,7 @@ export class RegisterComponent implements OnInit {
       next(userData){
         console.log(userData)
         that.registeredUser = that.authService.getCurrentUser();
-        that.saveUserData();
+        that.saveUserData(that.registeredUser);
         that.loggedUser = true;
         that.verifiedUser = that.registeredUser.emailVerified;
         },
@@ -121,7 +121,7 @@ export class RegisterComponent implements OnInit {
     this.logout( );
   }
 
-  private saveUserData( ) {
+  private saveUserData(  ) {
     const userData = new DatabaseUser();
     userData.uid = this.registeredUser.uid;
     userData.email = this.registeredUser.email;
