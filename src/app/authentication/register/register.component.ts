@@ -90,7 +90,7 @@ export class RegisterComponent implements OnInit {
       next(userData){
         console.log(userData)
         that.registeredUser = that.authService.getCurrentUser();
-        that.saveUserData(that.registeredUser);
+        that.saveUserData();
         that.loggedUser = true;
         that.verifiedUser = that.registeredUser.emailVerified;
         },
