@@ -80,10 +80,11 @@ export class LoginComponent implements OnInit {
   }
 
   private saveUserData(  ) {
-    const userData = new DatabaseUser();
-    userData.uid = this.registeredUser.uid;
-    userData.email = this.registeredUser.email;
-    userData.verified = this.registeredUser.emailVerified;
+    let userData: DatabaseUser = {
+      uid: this.registeredUser.uid,
+      email: this.registeredUser.email,
+      verified: this.registeredUser.emailVerified
+    };
     console.log(userData);
   }
 }

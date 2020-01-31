@@ -1,6 +1,5 @@
-import {User} from "./user";
 
-export class DatabaseUser implements User {
+export interface DatabaseUser {
   //user data to send to database at very first registration
   email: string;
 
