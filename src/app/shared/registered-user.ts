@@ -11,12 +11,8 @@ export class RegisteredUser implements User {
 
   uid?: string;
 
-  password?: string;
-
-  confirmPassword?: string;
 
   tel: number;
-
 
   //image: string;
 }

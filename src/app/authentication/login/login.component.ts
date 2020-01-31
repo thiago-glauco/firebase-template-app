@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../../services/authentication.service';
 import {User} from '../../shared/user';
-import {RegisteredUser} from '../../shared/registered-user';
+import {LoginFormUser} from '../../shared/login-form-user';
+import {DatabaseUser} from '../../shared/database-user';
 import {Observable, from} from 'rxjs';
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   verifiedUser: boolean; //toogle loggout and register buttons
   passwordsEqual: boolean = true;
 
-  loginUser: RegisteredUser = new RegisteredUser(); //object with user form data
+  loginUser: LoginFormUser = new LoginFormUser(); //object with user form data
   registeredUser: firebase.User; //User with data returned from firebase auth service
 
   constructor(private authService: AuthenticationService) { }
