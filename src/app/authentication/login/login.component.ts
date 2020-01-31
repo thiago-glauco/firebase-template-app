@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
         that.registeredUser = that.authService.getCurrentUser();
         that.loggedUser = true;
         that.verifiedUser = that.registeredUser.emailVerified;
+        that.saveUserData();
     },
     error(err) {
       console.log(err);
@@ -52,6 +53,7 @@ export class LoginComponent implements OnInit {
         that.registeredUser = that.authService.getCurrentUser();
         that.loggedUser = true;
         that.verifiedUser = that.registeredUser.emailVerified;
+        that.saveUserData()
     },
     error(err) {
       console.log(err);
@@ -75,5 +77,13 @@ export class LoginComponent implements OnInit {
         }
       }
     });
+  }
+
+  private saveUserData(  ) {
+    const userData = new DatabaseUser();
+    userData.uid = this.registeredUser.uid;
+    userData.email = this.registeredUser.email;
+    userData.verified = this.registeredUser.emailVerified;
+    console.log(userData);
   }
 }
