@@ -7,6 +7,7 @@ import {AuthenticationGuard} from '../services/authentication.guard';
 @NgModule({
   imports: [
     CommonModule,
+    UserAreaRoutingModule
   ],
   declarations: [UserProfileComponent],
   providers: [AuthenticationGuard]
