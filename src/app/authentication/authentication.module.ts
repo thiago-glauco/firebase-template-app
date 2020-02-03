@@ -15,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {AuthenticationRoutingModule} from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
+import { AuthRootComponent } from './auth-root/auth-root.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,6 @@ import { LoginComponent } from './login/login.component';
     MatMenuModule,
     FlexLayoutModule,
   ],
-  declarations: [RegisterComponent, LoginComponent],
+  declarations: [RegisterComponent, LoginComponent, AuthRootComponent],
 })
 export class AuthenticationModule { }

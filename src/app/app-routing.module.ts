@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('./authentication/authentication.module').then(mod => mod.AuthenticationModule)
   },
   {
+    path: 'user',
+    loadChildren: () => import('./user-area/user-area.module').then(mod => mod.UserAreaModule)
+  },
+  {
     path: '',
     redirectTo: 'HelloComponent',
     pathMatch: 'full'
