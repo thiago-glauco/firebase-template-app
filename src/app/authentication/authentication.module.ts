@@ -13,6 +13,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import {AuthenticationGuard} from '../services/authentication.guard';
+
 import {AuthenticationRoutingModule} from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AuthRootComponent } from './auth-root/auth-root.component';
