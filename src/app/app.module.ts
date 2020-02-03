@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import {AuthenticationModule} from './authentication/authentication.module';
+import {UserAreaModule} from './user-area/user-area.module';
 
 import {AngularFireModule} from '@angular/fire';
 import {environment} from './environments/environment';
@@ -40,6 +41,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
     AuthenticationModule,
+    UserAreaModule,
     AppRoutingModule,
     MatIconModule,
     MatFormFieldModule,

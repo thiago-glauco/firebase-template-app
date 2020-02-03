@@ -5,13 +5,18 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
-    path: 'user',
+    path: 'user-profile',
     component: UserProfileComponent
   },
+  {
+    path: '',
+    component: UserProfileComponent,
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AuthenticationRoutingModule { }
+export class UserAreaRoutingModule { }
