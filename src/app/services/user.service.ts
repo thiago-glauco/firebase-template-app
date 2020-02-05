@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {User} from '../shared/user';
 import {DatabaseUser} from '../shared/database-user';
 import {AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection} from '@angular/fire/firestore';
-import {from, Observable} from 'rxjs';
+import {from, Observable, BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class UserService {
@@ -12,6 +12,7 @@ export class UserService {
   private databaseUserDoc: AngularFirestoreDocument<DatabaseUser>;
   private userObservable: Observable<DatabaseUser>;
   private databaseUserData: DatabaseUser;
+  private userSubject: BehaviorSubject<DatabaseUser>;
 
   constructor(private afs: AngularFirestore) {
     this.databaseUsersColection = this.afs.collection<DatabaseUser>(this.collectionRoot);
