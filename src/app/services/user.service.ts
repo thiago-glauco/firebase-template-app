@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {User} from '../shared/user';
 import {DatabaseUser} from '../shared/database-user';
 import {AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection} from '@angular/fire/firestore';
-import {AuthenticationService} './authentication.service';
+import {AuthenticationService} from './authentication.service';
 import {from, Observable, BehaviorSubject} from 'rxjs';
 
 @Injectable()
