@@ -24,10 +24,11 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    let that = this;
     this.userService.userExist(this.fbUser.uid);
     this.userDataObservable.subscribe({
-      next(user){this.userData = user},
+      next(user){
+        that.userData = user},
       error(err){ alert(err) }
     })
   }

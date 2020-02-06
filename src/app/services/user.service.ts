@@ -21,11 +21,12 @@ export class UserService {
   }
 
   userExist( userId ) {
+    let that = this;
     let userDoc = this.afs.doc<DatabaseUser>(`${this.collectionRoot}/${userId}`);
     userDoc.valueChanges().subscribe({
       next(data){
         console.log(data)
-        this.userSubject.next(data);
+        that.userSubject.next(data);
         },
       error(err) {console.log("usuário não está no bd"); 
         console.log(err)}
