@@ -11,13 +11,14 @@ export class UserService {
   private collectionRoot: string = 'users';
   private databaseUsersColection: AngularFirestoreCollection<DatabaseUser[]>;
   private databaseUserDoc: AngularFirestoreDocument<DatabaseUser>;
-  private userObservable: Observable<DatabaseUser>;
   private databaseUserData: DatabaseUser;
   private userSubject: BehaviorSubject<DatabaseUser> = new BehaviorSubject(null);
+  private userObservable: Observable<DatabaseUser>;
 
   constructor(private afs: AngularFirestore,
     private authService: AuthenticationService) {
     this.databaseUsersColection = this.afs.collection<DatabaseUser>(this.collectionRoot);
+    this.userObservable = this.userSubject.asObservable();
   }
 
   userExist( userId ): Observable<any> {
@@ -61,8 +62,8 @@ export class UserService {
     this.userSubject.next(user);
   }
 
-  getDatabaseUser():BehaviorSubject<DatabaseUser> {
-    return this.userSubject;
+  getDatabaseUser():Observable<DatabaseUser> {
+    return this.userObservable;
   }
 
   deletUser( ) {
