@@ -20,7 +20,7 @@ export class UserProfileComponent implements OnInit {
     private authService: AuthenticationService,
   ) {
     this.fbUser = this.authService.getCurrentUser( );
-    this.userDataObservable = this.userService.getCurrentUser();
+    this.userDataObservable = this.userService.getDatabaseUser();
   }
 
   ngOnInit() {

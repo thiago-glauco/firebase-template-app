@@ -13,12 +13,11 @@ export class UserService {
   private databaseUserDoc: AngularFirestoreDocument<DatabaseUser>;
   private databaseUserData: DatabaseUser;
   private userSubject: BehaviorSubject<DatabaseUser> = new BehaviorSubject(null);
-  private userObservable: Observable<DatabaseUser>;
+  private userObservable: Observable<DatabaseUser> = this.userSubject.asObservable();
 
   constructor(private afs: AngularFirestore,
     private authService: AuthenticationService) {
     this.databaseUsersColection = this.afs.collection<DatabaseUser>(this.collectionRoot);
-    this.userObservable = this.userSubject.asObservable();
   }
 
   userExist( userId ) {
@@ -28,7 +27,8 @@ export class UserService {
         console.log(data)
         this.userSubject.next(data);
         },
-      error(err) {console.log(err)}
+      error(err) {console.log("usuário não está no bd"); 
+        console.log(err)}
     })
   }
 
