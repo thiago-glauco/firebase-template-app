@@ -21,7 +21,7 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
   }
 
-  userExist( userId ): Observable<any> {
+  userExist( userId ) {
     let userDoc = this.afs.doc<DatabaseUser>(`${this.collectionRoot}/${userId}`);
     userDoc.valueChanges().subscribe({
       next(data){

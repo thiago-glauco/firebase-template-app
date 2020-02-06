@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BoggusUserService } from '../../services/boggus-user.service';
+import { UserService } from '../../services/user.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import {DatabaseUser} from '../shared/database-user';
 import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -9,29 +12,28 @@ import { Observable } from 'rxjs';
 
 
 export class UserProfileComponent implements OnInit {
-  userData = {email: "blablabla"};
-  userDataObservable: Observable<any>;
-  dataSet = [
-    {email: 'test0@teste.com', verified: false},
-    {email: 'test1@teste.com', verified: true},
-    {email: 'test2@teste.com', verified: true},
-    {email: 'test3@teste.com', verified: true}
-  ];
-  constructor(private userService: BoggusUserService) { }
+  userData: DatabaseUser;
+  userDataObservable: Observable<DatabaseUser>;
+  fbUser: firebase.User;
+
+  constructor(private userService: UserService,
+    private authService: AuthenticationService,
+  ) {
+    this.fbUser = this.authService.getCurrentUser( );
+    this.userDataObservable = this.userService.getCurrentUser();
+  }
 
   ngOnInit() {
-    console.log("here");
-    this.userService.setUser(this.dataSet[0]);
-    this.userDataObservable = this.userService.getUser();
+    
+    this.userService.userExist(this.fbUser.uid);
     this.userDataObservable.subscribe({
-      next(data) {
-        this.userData = data;
-        console.log("email: " + this.userData.email);}
-    });
+      next(user){this.userData = user},
+      error(err){ alert(err) }
+    })
   }
 
   ngOnDestroy() {
-    this.userDataObservable.forEach;
+    
   }
 
 
