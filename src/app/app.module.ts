@@ -29,7 +29,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './about/about.component';
-import { UnloggedComponent } from './unlogged/unlogged.component';
+import {UnloggedComponent } from './unlogged/unlogged.component';
+import { BoggusUserService } from './services/boggus-user.service';
+
 
 
 @NgModule({
@@ -57,6 +59,6 @@ import { UnloggedComponent } from './unlogged/unlogged.component';
     ],
   declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [AuthenticationService, UserService]
+  providers: [AuthenticationService, UserService, BoggusUserService]
 })
 export class AppModule { }
