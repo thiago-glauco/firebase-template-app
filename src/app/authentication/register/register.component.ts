@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
         this.registeredUser = this.authService.getCurrentUser();
         this.loggedUser = true;
         this.verifiedUser = this.registeredUser.emailVerified;
+        this.loginUser.email = this.registeredUser.email;
         console.log(this.verifiedUser);
         //this.authService.logOut();
       } else {
