@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
     let that = this; //para usar dentro do observável
 
     //solicita a criação do usuário
-    const userObservable: Observable<User> = this.authService.signup(this.loginUser.email, this.loginUser.password);
+    const userObservable: Observable<firebase.auth.UserCredential> = this.authService.signup(this.loginUser.email, this.loginUser.password);
 
     userObservable.subscribe({
       next( user ) {
@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit {
         //os dados do usuário são armazenados em registeredUser
         that.registeredUser = user.user;
         that.loggedUser = true;
-        that.verifiedUser = user.emailVerified;
+        that.verifiedUser = user.user.emailVerified;
         //envia e-mail de confirmação para o usuário
         from(that.authService.sendVerificationMail()).subscribe({
           next( data ) {
@@ -95,7 +95,8 @@ export class RegisterComponent implements OnInit {
         that.verifiedUser = that.registeredUser.emailVerified;
         },
       error(err) {
-        console.log(err);
+        let errObj = that.authService.getErrorMessage(err.code);
+        alert(errObj[0].message);
         that.loggedUser = false;
         }
     });

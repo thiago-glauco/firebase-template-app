@@ -38,7 +38,9 @@ export class LoginComponent implements OnInit {
     },
     error(err) {
       console.log(err);
-      that.loggedUser = false;
+        let errObj = that.authService.getErrorMessage(err.code);
+        alert(errObj[0].message);
+        that.loggedUser = false;
     }
     })
   }
@@ -57,7 +59,9 @@ export class LoginComponent implements OnInit {
     },
     error(err) {
       console.log(err);
-      that.loggedUser = false;
+        let errObj = that.authService.getErrorMessage(err.code);
+        alert(errObj[0].message);
+        that.loggedUser = false;
     }
     });
   }
