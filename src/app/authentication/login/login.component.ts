@@ -22,7 +22,17 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
-
+    if( this.authService.hasLoggedUser() ) {
+      this.registeredUser = this.authService.getCurrentUser();
+      this.loggedUser = true;
+      this.verifiedUser = this.registeredUser.emailVerified;
+      this.loginUser.email = this.registeredUser.email;
+      console.log(this.verifiedUser);
+      //this.authService.logOut();
+    } else {
+      this.loggedUser = false;
+      this.verifiedUser = false;
+    }
   }
 
   login(){
@@ -34,6 +44,7 @@ export class LoginComponent implements OnInit {
         that.registeredUser = that.authService.getCurrentUser();
         that.loggedUser = true;
         that.verifiedUser = that.registeredUser.emailVerified;
+        that.loginUser.email = that.registeredUser.email;
         that.saveUserData();
     },
     error(err) {
@@ -55,6 +66,7 @@ export class LoginComponent implements OnInit {
         that.registeredUser = that.authService.getCurrentUser();
         that.loggedUser = true;
         that.verifiedUser = that.registeredUser.emailVerified;
+        that.loginUser.email = that.registeredUser.email;
         that.saveUserData()
     },
     error(err) {
