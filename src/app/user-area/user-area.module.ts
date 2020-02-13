@@ -14,6 +14,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { InputFileConfig, InputFileModule } from 'ngx-input-file';
+import { ImageCropperModule } from 'ngx-image-cropper';
+
+import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
+
+const config: InputFileConfig = {};
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,9 +32,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ImageCropperModule,
+    InputFileModule.forRoot(config)
   ],
-  declarations: [UserProfileComponent],
+  declarations: [UserProfileComponent, PhotoUploadComponent],
   providers: [AuthenticationGuard]
 })
 export class UserAreaModule { }
