@@ -7,24 +7,28 @@
     <p matLine><img mat-card-avatar></p>
   </mat-card-title>
 <mat-card-content fxLayout="column">
-  <mat-form-field >
-    <mat-label>Nome</mat-label>
-    <input matInput type="text">
-  </mat-form-field>
-  <mat-form-field fxFlex>
-    <mat-label>email</mat-label>
-    <input matInput type="text">
-  </mat-form-field>
-  <mat-form-field fxFlex>
-    <mat-label>celular</mat-label>
-    <input matInput type="text">
-  </mat-form-field>
-  <mat-form-field fxFlex>
-    <mat-label>Mini Bio</mat-label>
-    <textarea rows="10" col="100" matInput type="text">
-      Diga algo sobre você:
-    </textarea>
-  </mat-form-field>
+  <form fxFlex fxLayout="column" #userProfileForm="ngForm">
+    <mat-form-field >
+      <mat-label>Nome</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <input matInput type="email" placeholder="E-Mail" name="email" [(ngModel)]="userData.email" required #email="ngModel">
+      <mat-error *ngIf="email.touched && email.invalid">
+          A valid email is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <mat-label>celular</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <mat-label>Mini Bio</mat-label>
+      <textarea rows="10" col="100" matInput type="text">
+        Diga algo sobre você:
+      </textarea>
+    </mat-form-field>
+  </form>
 </mat-card-content>
 <mat-card-actions>
     <button mat-raised-button color="accent"><mat-icon>photo_camera</mat-icon>alterar foto</button>
