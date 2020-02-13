@@ -16,5 +16,6 @@ export class PhotoUploadComponent implements OnInit {
 
   teste() {
     console.log(this.myVar);
+    console.log(this.myVar[0].preview.length)
   }
 }
