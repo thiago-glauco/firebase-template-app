@@ -10,7 +10,7 @@
   <form fxFlex fxLayout="column" #userProfileForm="ngForm">
     <mat-form-field >
       <mat-label>Nome</mat-label>
-      <input matInput type="text">
+      <input matInput type="text" placeholder="ex. Jorge da Silva" name="nome" [(ngModel)]="userData.name" required #nome="ngModel"">
     </mat-form-field>
     <mat-form-field fxFlex>
       <input matInput type="email" placeholder="E-Mail" name="email" [(ngModel)]="userData.email" required #email="ngModel">
@@ -20,7 +20,7 @@
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>celular</mat-label>
-      <input matInput type="text">
+      <input matInput type="tel" placeholder="11 99999-9999" name="email" [(ngModel)]="userData.email" required #email="ngModel">
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Mini Bio</mat-label>
