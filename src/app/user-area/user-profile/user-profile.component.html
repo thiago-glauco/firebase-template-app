@@ -20,11 +20,15 @@
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>celular</mat-label>
-      <input matInput type="tel" placeholder="11 99999-9999" name="email" [(ngModel)]="userData.email" required #email="ngModel">
+      <input matInput type="tel" placeholder="11 99999-9999" name="mobile" [(ngModel)]="userData.mobile" required #mobile="ngModel">
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <mat-label>tel.</mat-label>
+      <input matInput type="tel" placeholder="11 4567-8901" name="tel" [(ngModel)]="userData.tel" required #tel="ngModel">
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Mini Bio</mat-label>
-      <textarea rows="10" col="100" matInput type="text">
+      <textarea rows="10" col="100" matInput type="text" [(ngModel)]="userData.bio">
         Diga algo sobre você:
       </textarea>
     </mat-form-field>
