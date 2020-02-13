@@ -51,15 +51,7 @@ export class UserService {
   }
 
   updateUserData(user: DatabaseUser) {
-    let that = this;
-    let userDoc = this.afs.doc<DatabaseUser>(`${this.collectionRoot}/${user.uid}`);
-    userDoc.valueChanges().subscribe({
-      next(data){
-        console.log(data);
-        that.databaseUsersColection.doc(user.uid).update(user);
-        },
-      error(err) {console.log(err)}
-    });
+    this.databaseUsersColection.doc(user.uid).update(user);
     this.userSubject.next(user);
   }
 

@@ -39,6 +39,10 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
+  save( ) {
+    this.userService.updateUserData(this.userData);
+  }
+
   ngOnDestroy() {
     
   }

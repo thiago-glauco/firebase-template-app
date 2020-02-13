@@ -10,7 +10,7 @@
   <form fxFlex fxLayout="column" #userProfileForm="ngForm">
     <mat-form-field >
       <mat-label>Nome</mat-label>
-      <input matInput type="text" placeholder="ex. Jorge da Silva" name="nome" [(ngModel)]="userData.name" required #nome="ngModel"">
+      <input matInput type="text" placeholder="ex. Jorge da Silva" name="nome" [(ngModel)]="userData.name" required #nome="ngModel">
     </mat-form-field>
     <mat-form-field fxFlex>
       <input matInput type="email" placeholder="E-Mail" name="email" [(ngModel)]="userData.email" required #email="ngModel">
@@ -28,14 +28,14 @@
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Mini Bio</mat-label>
-      <textarea rows="10" col="100" matInput type="text" [(ngModel)]="userData.bio">
+      <textarea rows="10" col="100" matInput type="text" name="bio" [(ngModel)]="userData.bio">
         Diga algo sobre você:
       </textarea>
     </mat-form-field>
   </form>
 </mat-card-content>
 <mat-card-actions>
-    <button mat-raised-button color="accent"><mat-icon>photo_camera</mat-icon>alterar foto</button>
-  <button mat-raised-button>salvar</button>
+  <button mat-raised-button color="accent"><mat-icon>Photo_Camera</mat-icon>alterar foto</button>
+  <button mat-raised-button (click)="save()"><mat-icon>save</mat-icon>Salvar</button>
 </mat-card-actions>
 </mat-card>
