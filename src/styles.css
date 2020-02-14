@@ -1,6 +1,13 @@
 /* Add application styles & imports to this file! */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+/*
+maincolor: #3700b3
+secondary color: #67A6E0
+backgroundcololor:
+*/
+
+
 .errorText  {
   color: red;
   font-style: bold;
