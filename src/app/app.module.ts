@@ -31,6 +31,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './about/about.component';
 import {UnloggedComponent } from './unlogged/unlogged.component';
 import { BoggusUserService } from './services/boggus-user.service';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -57,7 +58,7 @@ import { BoggusUserService } from './services/boggus-user.service';
     MatMenuModule,
     FlexLayoutModule
     ],
-  declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent ],
+  declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent, HomeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AuthenticationService, UserService, BoggusUserService]
 })
