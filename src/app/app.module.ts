@@ -27,11 +27,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './about/about.component';
 import {UnloggedComponent } from './unlogged/unlogged.component';
 import { BoggusUserService } from './services/boggus-user.service';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './common/header/header.component';
 
 
 
@@ -58,7 +60,7 @@ import { HomeComponent } from './home/home.component';
     MatMenuModule,
     FlexLayoutModule
     ],
-  declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent, HomeComponent ],
+  declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent, HomeComponent, HeaderComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AuthenticationService, UserService, BoggusUserService]
 })

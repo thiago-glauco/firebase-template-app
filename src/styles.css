@@ -7,6 +7,10 @@ secondary color: #67A6E0
 backgroundcololor:
 */
 
+body {
+  background-color: #67A6E0
+}
+
 
 .errorText  {
   color: red;
