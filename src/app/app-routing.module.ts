@@ -12,9 +12,12 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user-area/user-area.module').then(mod => mod.UserAreaModule)
   },
-    {
-      path: 'home', component: HomeComponent
-    }
+  {
+    path: 'home', component: HomeComponent
+  },
+  {
+    path: '', component: HomeComponent
+  }
 
 
 ];

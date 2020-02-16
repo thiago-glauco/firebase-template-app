@@ -1,8 +1,11 @@
-<mat-toolbar color="primary">
+<mat-toolbar fxLayout="row">
   <mat-menu #appMenu="matMenu">
     <button mat-menu-item routerLink="/authentication/register">Registre-se</button>
     <button mat-menu-item routerLink="/authentication/login">Login</button>
     <button mat-menu-item routerLink="/home">About</button>
   </mat-menu>
-  Faça Parte Desse Grupo!
+  <button fxFlex="10%" mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>more_vert</mat-icon>
+  </button>
+  <p matLine fxFlex>Faça Parte Desse Grupo!</p>
 </mat-toolbar>
