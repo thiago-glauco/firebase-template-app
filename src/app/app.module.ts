@@ -58,6 +58,7 @@ import { HeaderComponent } from './common/header/header.component';
     MatCardModule,
     MatDialogModule,
     MatMenuModule,
+    MatToolbarModule,
     FlexLayoutModule
     ],
   declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent, HomeComponent, HeaderComponent ],
