@@ -34,6 +34,7 @@ import {UnloggedComponent } from './unlogged/unlogged.component';
 import { BoggusUserService } from './services/boggus-user.service';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 
 
@@ -61,7 +62,7 @@ import { HeaderComponent } from './common/header/header.component';
     MatToolbarModule,
     FlexLayoutModule
     ],
-  declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent, HomeComponent, HeaderComponent ],
+  declarations: [ AppComponent, HelloComponent, AboutComponent, UnloggedComponent, HomeComponent, HeaderComponent, FooterComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AuthenticationService, UserService, BoggusUserService]
 })
