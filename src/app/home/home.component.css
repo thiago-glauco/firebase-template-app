@@ -1,8 +1,7 @@
 .home {
-  width: 100%;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/template-56c3b.appspot.com/o/template_app_home.png?alt=media&token=cff05420-be4a-4953-8b82-f44d48281081");
   background-repeat: no-repeat;
   background-position: center; /* Center the image */
   background-size: cover;
-  height: 60rem
+  height: 90vh
 }

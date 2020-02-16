@@ -1,8 +1,11 @@
 <mat-toolbar fxLayout="row">
   <mat-menu #appMenu="matMenu">
+    <button mat-menu-item routerLink="/home">Home</button>
     <button mat-menu-item routerLink="/authentication/register">Registre-se</button>
     <button mat-menu-item routerLink="/authentication/login">Login</button>
-    <button mat-menu-item routerLink="/home">About</button>
+    <button mat-menu-item routerLink="">Fale com a gente</button>
+    <button mat-menu-item routerLink="">Quem Somos</button>
+    <button mat-menu-item routerLink="">Visite nosso site</button>
   </mat-menu>
   <button fxFlex="10%" mat-icon-button [matMenuTriggerFor]="appMenu">
   <mat-icon>more_vert</mat-icon>
