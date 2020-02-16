@@ -1,9 +1,8 @@
 <mat-toolbar color="primary">
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item routerLink="/authentication/register">Registre-se</button>
+    <button mat-menu-item routerLink="/authentication/login">Login</button>
+    <button mat-menu-item routerLink="/home">About</button>
+  </mat-menu>
   Faça Parte Desse Grupo!
 </mat-toolbar>
-<nav>
-<button routerLink="/authentication/register">registre-se</button>
-<button routerLink="/authentication/login">login</button>
-<button routerLink="/user/user-profile">user area</button>
-<button routerLink="/home">Home</button>
-</nav>
