@@ -1,7 +1,7 @@
-<div class="home">
 
-  <form class="form-space" fxLayout="column" fxLayoutGap="1vh" #loginForm="ngForm" fxLayoutAlign="end;center">
-      <mat-form-field fxFlex>
+  <form class="home form-space" fxLayout="column" fxLayoutGap="1vh" #loginForm="ngForm" fxLayoutAlign="end">
+      <div fxFlex="50%"></div>
+      <mat-form-field  fxFlex>
       <input matInput type="email" placeholder="E-Mail" name="email" [(ngModel)]="loginUser.email" required #email="ngModel">
       <mat-error *ngIf="email.touched && email.invalid">
           A valid email is required.
@@ -19,15 +19,15 @@
     </div>
     <mat-divider></mat-divider>
     <button fxFlex flxAlign="end" mat-raised-button [disabled]="!loginForm.valid" [fxHide]="loggedUser"  (click)="login()" [attr.aria-label]="'Entrar'"><mat-icon></mat-icon> Login </button>
-    <button fxFlex flxAlign="end" [fxHide]="loggedUser" mat-raised-button (click)="googleLogin()" [attr.aria-label]="'Google Login'">
+    <button color="primary" fxFlex flxAlign="end" [fxHide]="loggedUser" mat-raised-button (click)="googleLogin()" [attr.aria-label]="'Google Login'">
       <mat-icon>account_box</mat-icon> Registre-se via Google
     </button>
-    <button fxFlex flxAlign="end" [fxHide]="!loggedUser"  mat-raised-button (click)="logout()" [attr.aria-label]="'Logout'">
+    <button color="accent" fxFlex flxAlign="end" [fxHide]="!loggedUser"  mat-raised-button (click)="logout()" [attr.aria-label]="'Logout'">
       <mat-icon>account_box</mat-icon> Logout
     </button>
     <button fxFlex flxAlign="end" [fxHide]="loggedUser"  mat-raised-button (click)="logout()" [attr.aria-label]="'Logout'">
       <mat-icon>account_box</mat-icon> Esqueci minha senha
     </button>
   </form>
+ 
 
-</div>
