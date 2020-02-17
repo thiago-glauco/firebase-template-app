@@ -1,6 +1,10 @@
-
-  <form class="home form-space" fxLayout="column" fxLayoutGap="1vh" #loginForm="ngForm" fxLayoutAlign="end">
-      <div fxFlex="50%"></div>
+  <div class="home" fxLayout="column" fxLayoutAlign="end">
+    <div fxFlex fxLayout="row" fxLayoutAlign="end;center">
+      <span fxFlex></span>
+      <img id="logo" src="https://www.isure.com.br/wp-content/uploads/2017/05/logo-isure.png" alt="logo da ISure" fxFlex="35%" fxAlign="end">
+    </div>
+  <form fxFlex="90%" fxLayout="column" fxLayoutGap="1vh" #loginForm="ngForm" >
+      <div fxFlex="60%"></div>
       <mat-form-field  fxFlex>
       <input matInput type="email" placeholder="E-Mail" name="email" [(ngModel)]="loginUser.email" required #email="ngModel">
       <mat-error *ngIf="email.touched && email.invalid">
@@ -29,5 +33,6 @@
       <mat-icon>account_box</mat-icon> Esqueci minha senha
     </button>
   </form>
+  </div>
  
 
