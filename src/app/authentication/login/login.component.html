@@ -18,7 +18,7 @@
         [type]="hidePassword ? 'password' : 'text'" required placeholder="Password" name="password"
         [(ngModel)]="loginUser.password" #password="ngModel"  minlength="6" maxlength="8" >
       </mat-form-field>
-      <button fxFlex flxAlign="end" mat-icon-button  (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <button fxFlex flxAlign="end" mat-icon-button color="accent"  (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon></button>
     </div>
     <mat-divider></mat-divider>
