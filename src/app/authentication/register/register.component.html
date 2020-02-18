@@ -1,6 +1,5 @@
-<form class="form-space" fxLayout="column" #registerForm="ngForm" >
+<form class="home form-space" fxLayout="column" #registerForm="ngForm" >
     <!--This area deals with user loggin and data fields. -->
-    <p>Please, check your personal data, address, contact info and login password:</p>
     <!--<mat-form-field fxFlex>
       <input matInput type="text" placeholder="Name" name="userName" [(ngModel)]="loginUser.name" 
         required minLength="4" maxlength="80" pattern="^[\wÀ-ú]+(\s[\wÀ-ú]+){1,10}" #userName="ngModel">
@@ -25,23 +24,25 @@
     </mat-form-field>
     
     <!--This area deal with password -->
-    <div class="password" fxFlex fxLayout="column" [fxHide]="loggedUser">
-      <mat-form-field fxFlex>
-        <input matInput 
-        [type]="hidePassword ? 'password' : 'text'" required placeholder="Password" name="password"
-        [(ngModel)]="loginUser.password" #password="ngModel"  minlength="6" maxlength="8" >
-      </mat-form-field>
-      <mat-form-field fxFlex>
-        <input matInput 
-        [type]="hidePassword ? 'password' : 'text'" required placeholder="Confirm Password" name="confirmPassword"
-        [(ngModel)]="loginUser.confirmPassword" minlength="6" maxlength="8" #confirmPassword="ngModel">
-      </mat-form-field>
+    <div class="password" fxFlex fxLayout="row" [fxHide]="loggedUser">
+        <div fxFl fxLayout="column">
+          <mat-form-field fxFlex>
+            <input matInput 
+            [type]="hidePassword ? 'password' : 'text'" required placeholder="Password" name="password"
+            [(ngModel)]="loginUser.password" #password="ngModel"  minlength="6" maxlength="8" >
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input matInput 
+            [type]="hidePassword ? 'password' : 'text'" required placeholder="Confirm Password" name="confirmPassword"
+            [(ngModel)]="loginUser.confirmPassword" minlength="6" maxlength="8" #confirmPassword="ngModel">
+          </mat-form-field>
+        </div>
+        <button fxFlex="10%" flxAlign="center" mat-icon-button color="accent"  (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
       <div>
         <p class="errorText" [fxHide]='passwordsEqual'>Senha e confirmação de senha estão diferentes</p>
       </div>
-      <button fxFlex flxAlign="center" mat-raised-button  (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>Exibir Senha
-      </button>
     </div>
     <mat-divider></mat-divider>
     <button fxFlex flxAlign="center" mat-raised-button [disabled]="!registerForm.valid" [fxHide]="loggedUser"  (click)="createUser()" [attr.aria-label]="'Registrar'">
