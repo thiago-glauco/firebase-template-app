@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from "@angular/common";
+import { Routes, RouterModule} from '@angular/route';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
+
   }
+
+  back(){
+    this.location.back()
+  }
+
 
 }
