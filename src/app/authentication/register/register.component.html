@@ -1,4 +1,10 @@
-<form class="home form-space" fxLayout="column" #registerForm="ngForm" >
+  
+  <div class="home" fxLayout="column" fxLayoutAlign="end">
+    <div fxFlex fxLayout="row" fxLayoutAlign="end;center">
+      <span fxFlex></span>
+      <img id="logo" src="https://www.isure.com.br/wp-content/uploads/2017/05/logo-isure.png" alt="logo da ISure" fxFlex="35%" fxAlign="end">
+    </div>
+<form fxFlex="90%" class="form-space" fxLayoutGap="1vh" fxLayout="column" #registerForm="ngForm" >
     <!--This area deals with user loggin and data fields. -->
     <!--<mat-form-field fxFlex>
       <input matInput type="text" placeholder="Name" name="userName" [(ngModel)]="loginUser.name" 
@@ -16,6 +22,7 @@
       </mat-error>
     </mat-form-field>
       {{tel.valid}} {{tel.dirty}} {{tel.errors | json}}-->
+    <p matLine color="accent">Informe um email e senha para iniciar seu cadastro:</p>
     <mat-form-field fxFlex>
       <input matInput type="email" placeholder="E-Mail" name="email" [(ngModel)]="loginUser.email" required #email="ngModel">
       <mat-error *ngIf="email.touched && email.invalid">
@@ -24,8 +31,8 @@
     </mat-form-field>
     
     <!--This area deal with password -->
-    <div class="password" fxFlex fxLayout="row" [fxHide]="loggedUser">
-        <div fxFl fxLayout="column">
+    <div class="password" fxFlex fxLayout="row" fxLayoutAlign="center;center" [fxHide]="loggedUser">
+        <div fxFlex fxLayout="column" fxLayoutGap="1vh">
           <mat-form-field fxFlex>
             <input matInput 
             [type]="hidePassword ? 'password' : 'text'" required placeholder="Password" name="password"
@@ -45,13 +52,15 @@
       </div>
     </div>
     <mat-divider></mat-divider>
-    <button fxFlex flxAlign="center" mat-raised-button [disabled]="!registerForm.valid" [fxHide]="loggedUser"  (click)="createUser()" [attr.aria-label]="'Registrar'">
+    <button fxFlex flxAlign="end" mat-raised-button color="primary" [disabled]="!registerForm.valid" [fxHide]="loggedUser"  (click)="createUser()" [attr.aria-label]="'Registrar'">
       <mat-icon></mat-icon> Registrar
     </button>
-    <button fxFlex flxAlign="center" [fxHide]="loggedUser" mat-raised-button (click)="createGoogleUser()" [attr.aria-label]="'Registre-se via Google'">
+    <a mat-button color="accent">ou</a>
+    <button fxFlex flxAlign="end" [fxHide]="loggedUser" mat-raised-button (click)="createGoogleUser()" [attr.aria-label]="'Registre-se via Google'">
       <mat-icon>account_box</mat-icon> Registre-se via Google
     </button>
-    <button fxFlex flxAlign="center" [fxHide]="!loggedUser"  mat-raised-button (click)="logout()" [attr.aria-label]="'Logout'">
+    <button fxFlex flxAlign="end" [fxHide]="!loggedUser" color="accent" mat-raised-button (click)="logout()" [attr.aria-label]="'Logout'">
       <mat-icon>account_box</mat-icon> Sair
     </button>
   </form>
+  </div>
