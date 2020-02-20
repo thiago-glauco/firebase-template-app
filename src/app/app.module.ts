@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import {AuthenticationModule} from './authentication/authentication.module';
 import {UserAreaModule} from './user-area/user-area.module';
+import {VendasModule} from './vendas/vendas.module';
 
 import {AngularFireModule} from '@angular/fire';
 import {environment} from './environments/environment';
@@ -50,6 +51,7 @@ import { FooterComponent } from './common/footer/footer.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
     AuthenticationModule,
+    VendasModule,
     UserAreaModule,
     AppRoutingModule,
     MatIconModule,

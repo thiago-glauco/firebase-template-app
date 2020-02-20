@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrcamentoComponent implements OnInit {
 
+  const planos = [
+    {id: 1, name: "Amil"},
+    {id: 2, name: "Bradesco"},
+    {id: 2, name: "Notre Dame"},
+    {id: 2, name: "Inter Medica"},
+    {id: 2, name: "Medial"},
+    {id: 2, name: "Greeline"},
+    {id: 2, name: "QQ um"},
+    {id: 2, name: "QQ um"},
+    {id: 2, name: "QQ um"},
+    {id: 2, name: "QQ um"},
+  ]
   constructor() { }
 
   ngOnInit() {

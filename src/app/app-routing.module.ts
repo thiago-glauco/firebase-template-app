@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user-area/user-area.module').then(mod => mod.UserAreaModule)
   },
+  {
+    path: 'vendas',
+    loadChildren: () => import('./vendas/vendas.module').then(mod => mod.VendasModule)
+  },
 
 ];
 

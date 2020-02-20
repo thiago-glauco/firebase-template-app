@@ -1,0 +1,14 @@
+<p>
+orcamento works!
+</p>
+
+<ng-scrollbar track="all">
+<mat-grid-list [cols]="planos.length" fxFlex fxLayout="row">
+  <mat-grid-tile *ngFor="let plano of planos">
+    <div style="height: 300px; margin: 2em; background: #EFF2F3">
+    {{plano.name}}
+    <img style="display: block" height="500" width="800" src="https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+</ng-scrollbar>
