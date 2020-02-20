@@ -38,6 +38,7 @@ import { FooterComponent } from './common/footer/footer.component';
 
 
 
+
 @NgModule({
   imports:      [
     BrowserModule,
