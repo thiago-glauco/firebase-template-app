@@ -1,7 +1,7 @@
 <p>
 orcamento works!
 </p>
-<virtual-scroller #scroll horizontal="true" [items]="planos">
+<virtual-scroller [scrollAnimationTime]="2" #scroll horizontal="true" [items]="planos">
   <p *ngFor="let item of scroll.viewPortItems">
     <span>
       {{item.name}}
