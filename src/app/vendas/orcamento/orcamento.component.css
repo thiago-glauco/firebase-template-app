@@ -1,0 +1,10 @@
+virtual-scroller {
+  width: 350px;
+  height: 4rem;
+}
+
+p {
+  display: inline;
+  width: 30%;
+  height: 2rem;
+}

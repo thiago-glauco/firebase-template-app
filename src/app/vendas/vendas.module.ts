@@ -6,6 +6,7 @@ import {VendasRoutingModule} from './vendas-routing.module';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list'
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     VendasRoutingModule,
     MatListModule,
     MatGridListModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    VirtualScrollerModule,
   ],
   declarations: [OrcamentoComponent]
 })

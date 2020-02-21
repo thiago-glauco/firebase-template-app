@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrcamentoComponent implements OnInit {
 
-  const planos = [
+  planos = [
     {id: 1, name: "Amil"},
     {id: 2, name: "Bradesco"},
     {id: 2, name: "Notre Dame"},
