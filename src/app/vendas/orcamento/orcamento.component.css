@@ -20,3 +20,7 @@ virtual-scroller p {
 app-title {
   margin: auto
 }
+
+.main {
+  height: 10vh
+}
