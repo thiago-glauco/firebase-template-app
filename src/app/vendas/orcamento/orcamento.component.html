@@ -1,12 +1,13 @@
-<p>
-orcamento works!
-</p>
-<virtual-scroller [scrollAnimationTime]="2" #scroll horizontal="true" [items]="planos">
+
+
+<div class="myScroll" fxLayout="column" fxLayoutAlign="center;center">
+<virtual-scroller fxFlex="100%"  [scrollAnimationTime]="2" #scroll horizontal="true" [items]="planos">
   <p *ngFor="let item of scroll.viewPortItems">
     <span>
       {{item.name}}
     </span>
   </p>
 </virtual-scroller>
+</div>
 
 
