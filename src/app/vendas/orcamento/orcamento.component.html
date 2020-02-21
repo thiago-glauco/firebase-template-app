@@ -1,11 +1,14 @@
 
-<p>Escolha a Operadora</p>
+<app-title title="Escolha a Operadora"></app-title>
 <div class="myScroll" fxLayout="column" fxLayoutAlign="center;center">
 <virtual-scroller fxFlex="100%"  [scrollAnimationTime]="2" #scroll horizontal="true" [items]="planos">
   <p *ngFor="let item of scroll.viewPortItems">
     <img  [src]="item.src" [alt]="item.name" align="center" width="90%"><br>
   </p>
 </virtual-scroller>
+
+<app-footer></app-footer>
 </div>
+
 
 
