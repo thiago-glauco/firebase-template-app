@@ -1,14 +1,15 @@
 virtual-scroller {
   width: 90%;
-  height: 5rem;
+  height: 10rem;
   margin: auto;
-  
+  background-color: white;
 }
 
 p {
   display: inline;
   width: 30%;
-  height: 2rem;
+  line-height: 100px;
+  padding: 5px
 }
 
 .myScroll {
