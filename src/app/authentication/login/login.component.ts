@@ -95,6 +95,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  recoverPassword( ) {
+    
+  }
+
   private saveUserData(  ) {
     let userData: DatabaseUser = {
       uid: this.registeredUser.uid,
